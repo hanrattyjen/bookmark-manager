@@ -6,5 +6,4 @@ gem 'capybara'
 gem 'rspec'
 gem 'sinatra'
 gem 'rspec-sinatra'
-gem 'rerun'
-
+gem 'database_cleaner'
