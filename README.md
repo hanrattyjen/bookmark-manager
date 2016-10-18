@@ -1,33 +1,46 @@
-# bookmark_manager
+# Bookmarks Manager
 
+## User Stories
 
+```
+As an internet user
+so I visit websites quickly
+I would like to see a list of links on bookmarks
+```
+| Object   | Method    |
+| ------   |-------    |
+| websites | bookmarks |
+```
+As an internet user
+so I can revisit websites
+I would like to be able to add links to my bookmarks
+```
+| Object   | Method        |
+| ------   |-------        |
+| websites | add_bookmarks |
+```
+As an internet user
+so I can remember the websites
+I would like to be able to tag my websites.
+```
+| Object   | Method        |
+| ------   |-------        |
+| websites | bookmark_tags |
+```
+As an internet user
+so I can easily browse my websites
+I would like to filter the websites by tags.
+```
+| Object   | Method           |
+| ------   |-------           |
+| websites | filter_bookmarks |
 
-1) Write User stories/features for showing a list of links
-As a user
-So that I can click on a link that I want to go to
-I want to be able to see a list of my links on my homepage
+---
+## Installation
 
-As a time-pressed user
-So that I can quickly find web sites I recently bookmarked
-I would like to see links in descending chronological order
+1. Clone the repo
+2. Run ```bundle``` in the command line
+3. Start the local server using ```ruby app/app.rb``` on the terminal
+4. Open a browser page and type in the address ```localhost:4567/links```
 
-2) Write User stories/features for adding new links
-As a user
-So that I can access a new link
-I want to be able to add the site's address and title to my bookmark manager
-
-3) Write User stories/features for adding tags to links
-As a user
-So that I can group links by a characteristic
-I want to be able to add a tag to a link
-
-4) Write User stories/features for filtering links by a tag
-As a user
-So that I can find the right link
-I want to be able to filter a list of links by searching for a tag
-
-
-5) Draw a rough domain model
-
-
-
+---
