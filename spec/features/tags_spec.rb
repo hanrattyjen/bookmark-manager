@@ -25,4 +25,15 @@ feature 'filtering links by tags' do
     expect(page).to have_content("Kitten pics")
     expect(page).to have_content("Young cat pics")
   end
+
+  scenario 'should be able to add multiple tags' do
+    visit ('/links')
+    click_button 'Create New Bookmark'
+    fill_in :title, with: 'Kitten pics'
+    fill_in :url, with: 'https://google.com/images?q=cute%20kittens'
+    fill_in :tags, with: 'kittens, cute'
+
+    expect(page).to have_link('kittens', href: '/tags/kittens')
+    expect(page).to have_link('cute', href: '/tags/cute')
+  end
 end
