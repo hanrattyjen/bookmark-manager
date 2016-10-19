@@ -1,17 +1,10 @@
-feature 'adding user accounts' do
+require_relative 'web_helper'
 
-  scenario 'signing up' do
-      visit('/register')
+feature 'User sign up' do
 
-      fill_in 'first_name', with: 'Mike'
-      fill_in 'last_name', with: 'Like'
-      fill_in 'email', with: 'mike@gmail.com'
-      fill_in 'password', with: 'qwerty'
-      click_button('Register')
-      User.inspect
-      expect { User.count }.to change.by(1)
-      expect(page).to have_path '/welcome'
-      expect(page).to have_content 'Welcome new user'
+  scenario 'signing up as a new user' do    
+    expect { sign_up }.to change(User, :count).by(1)
+    expect(page).to have_content('Welcome Mike')
+    expect(User.first.email).to eq('mike@gmail.com')
   end
-
 end

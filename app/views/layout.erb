@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Super Awesome Bookmark Manager</title>
+  </head>
+
+  <body>
+    <% if current_user %>
+      Welcome, <%= current_user.first_name %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
