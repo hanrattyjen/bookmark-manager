@@ -7,10 +7,10 @@
 <ul id='links'>
   <% @links.each do |link| %>
     <li>
-      Title: <%= link.title %>
-      URL:   <%= link.url   %>
+      Title: <a href="<%= link.url %>"><%= link.title %></a>
+      URL:   <%= link.url %>
       Tags: <% link.tags.each do |tag| %>
-        <%= tag.name %>
+        <a href="tags/<%= tag.name %>"><%= tag.name %></a>
       <% end %>
     </li>
   <% end %>
