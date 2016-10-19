@@ -19,6 +19,7 @@ feature "creating links" do
     fill_in :tags, with: 'kittens'
     click_button 'Add Link'
 
-    expect(page).to have_content('Title: Kitten pics URL: https://images.google.com/?q=cute%20kittens Tags: kittens')
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('kittens')
   end
 end
