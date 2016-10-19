@@ -18,7 +18,8 @@ feature 'filtering links by tags' do
     fill_in :url, with: 'https://google.com/images?q=young%20cat'
     fill_in :tags, with: 'kittens'
     click_button 'Add Link'
-    click_link 'kittens'
+
+    visit ('/tags/kittens')
 
     expect(page).not_to have_content("Puppy pics")
     expect(page).to have_content("Kitten pics")
