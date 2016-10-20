@@ -15,7 +15,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/' do
-    redirect to(si'/links')
+    redirect to('/links')
   end
 
   get '/links' do
