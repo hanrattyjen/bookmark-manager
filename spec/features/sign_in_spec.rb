@@ -11,7 +11,7 @@ feature "Signing up a new user" do
   scenario "When user has a mismatching password confirmation, no new users are created" do
     expect { sign_up(password_confirmation: 'wrong') }.not_to change(User, :count)
     expect(current_path).to eq '/sign_up'
-    expect(page).to have_content("Password and confirmation password do not match")
+    expect(page).to have_content("Password does not match the confirmation")
   end
 
   scenario "User cannot sign in with a blank email field" do
@@ -20,5 +20,12 @@ feature "Signing up a new user" do
 
   scenario "User cannot sign in with an invalid email" do
     expect { sign_up(email: "invalid@email") }.not_to change(User, :count)
+    expect(page).to have_content("Email has an invalid format")
+  end
+
+  scenario "User email address must be unique" do
+    sign_up
+    expect { sign_up }.not_to change(User, :count)
+    expect(page).to have_content("Email is already taken")
   end
 end
