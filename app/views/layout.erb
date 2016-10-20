@@ -11,6 +11,7 @@
     <% if flash[:notice] %>
       <div id='notice'><%= flash[:notice] %></div>
     <% end %>
+
     <%= yield %>  <!-- this then yields to the view which has been called by your controller -->
   </body>
 </html>
