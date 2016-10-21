@@ -34,7 +34,25 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/users/reset_password' do
-    "Your token is invalid"
+    @user = User.find_by_valid_token(params[:token])
+    if(@user)
+      session[:token] = params[:token]
+      erb :'users/reset_password'
+    else
+      "Your token is invalid"
+    end
   end
+
+  patch '/users' do
+     user = User.find_by_valid_token(session[:token])
+     if user.update(password: params[:password], password_confirmation: params[:password_confirmation])
+       session[:token] = nil
+       user.update(password_token: nil)
+       redirect "/sessions/sign_in"
+     else
+       flash.now[:errors] = user.errors.full_messages
+       erb :'users/reset_password'
+     end
+   end
 
 end
