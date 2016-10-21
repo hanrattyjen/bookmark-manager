@@ -3,7 +3,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', './app/app.rb')
-
+require_relative 'helpers/session'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
@@ -48,6 +48,8 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  config.include SessionHelpers
 
   config.include Capybara::DSL
   # rspec-expectations config goes here. You can use an alternate
