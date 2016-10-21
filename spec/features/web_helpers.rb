@@ -10,7 +10,7 @@ def sign_up(name: "David Davidson",
   click_button "Sign Up"
 end
 
-def sign_in(email:, password:)
+def sign_in(email: "daviddavidson@david.com", password: "david")
    visit '/sessions/sign_in'
    fill_in :email, with: email
    fill_in :password, with: password

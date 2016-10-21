@@ -65,12 +65,11 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/sessions/sign_in' do
-    @user = User.new
     erb :'sessions/sign_in'
   end
 
   post '/sessions' do
-    user = User.authenticate(email: params[:email], password: params[:password])
+    user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
       redirect to('/links')
