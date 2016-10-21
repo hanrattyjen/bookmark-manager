@@ -7,6 +7,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'sinatra-flash'
 gem 'sinatra-partial'
+gem 'timecop'
 
 group :test do
   gem 'byebug'
