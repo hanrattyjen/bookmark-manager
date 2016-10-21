@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature "see links" do
   scenario "I want to see a list of my saved links" do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')

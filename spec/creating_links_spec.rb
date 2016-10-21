@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature "creating links" do
   scenario "I want to create links" do
     visit '/links/new'

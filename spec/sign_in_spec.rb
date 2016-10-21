@@ -1,5 +1,4 @@
 require 'spec_helper'
-require_relative 'web_helpers'
 
 feature "Signing up a new user" do
   scenario "New user signing up should increment user count by 1 and display welcome message" do
