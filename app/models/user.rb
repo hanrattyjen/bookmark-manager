@@ -20,4 +20,15 @@ class User
 
   validates_confirmation_of :password
 
+  def self.authenticate(email, password)
+    user = first(email: email)
+    puts user.inspect
+    if user && BCrypt::Password.new(user.password_digest) == password
+      user
+    else
+      nil
+    end
+  end
+
+
 end

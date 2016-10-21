@@ -29,3 +29,16 @@ feature "Signing up a new user" do
     expect(page).to have_content("Email is already taken")
   end
 end
+
+  feature 'A user can sign in' do
+
+    let!(:user) do
+      User.create(name: "David Davidson", email: "daviddavidson@david.com", password: "david", password_confirmation: "david")
+    end
+
+    scenario 'with correct email and password' do
+      sign_in(email: user.email, password: user.password)
+      expect(current_path).to eq '/links'
+      expect(page).to have_content("Welcome #{user.name}")
+    end
+  end
