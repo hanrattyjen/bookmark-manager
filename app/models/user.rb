@@ -1,5 +1,6 @@
 require_relative '../data_mapper_setup'
 require 'bcrypt'
+require 'securerandom'
 
 class User
 
@@ -12,6 +13,7 @@ class User
   property :name,            String
   property :email,           String, format: :email_address, required: true, unique: true
   property :password_digest, Text
+  property :password_token,  String, length: 60
 
   def password=(password)
     @password = password
@@ -29,5 +31,8 @@ class User
     end
   end
 
-
+  def generate_token
+    self.password_token = SecureRandom.hex
+    self.save
+  end
 end
