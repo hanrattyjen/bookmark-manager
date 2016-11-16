@@ -1,27 +1,20 @@
-# Super-awesome-bookmark-manager
+## Bookmarks Manager
 
-```
-As a Makers Student
-So that I can quickly go to web sites I regularly visit
-I want to see a list of my links on the homepage
-```
-```
-As a Makers Student
-So that I can quickly find web sites I recently bookmarked
-I would like to see links in descending chronological order
-```
-```
-As a Makers Student
-So that I can add to my online resources
-I would like to add the site's address and title to my bookmark manager
-```
-```
-As a Makers Student
-So that I can organise my online resources into different categories
-I would like to add tags to the links in my bookmark manager
-```
-```
-As a Makers Student
-So that I can find relevant information quickly
-I want to filter my links by a tag
-```
+### The challenge
+
+Build a web app that can manage a user's saved links.
+This is our first time using an MVC and an ORM.
+
+### Technologies used
+
+* Ruby
+* Sinatra
+* Postgresql
+* Datamapper
+
+### Installation
+
+1. Clone the repo
+2. Run ```bundle``` in the command line
+3. Start the local server using ```ruby app/app.rb``` on the terminal
+4. Open a browser page and type in the address ```localhost:4567/links```

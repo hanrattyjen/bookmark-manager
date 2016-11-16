@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 --color --format documentation
+=======
+--color
+--format documentation
+>>>>>>> day-five
 --require spec_helper

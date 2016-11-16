@@ -1,0 +1,18 @@
+<body>
+  <h1>New Users</h1>
+  <form action="/sign_up" method="post">
+    <label for="name">
+      Name: <input type="text" name="name" value="<%=@user.name %>">
+    </label>
+    <label for="email">
+      E-Mail: <input type="email" name="email" value="<%=@user.email %>" required>
+    </label>
+    <label for="password">
+      Password: <input type="password" name="password">
+    </label>
+    <label for="password_confirmation">
+      Confirm password: <input type="password" name="password_confirmation">
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+</body>
